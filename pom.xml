@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>EJBMediator</groupId>
+    <artifactId>EJBMediator</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.synapse</groupId>
+            <artifactId>synapse-core</artifactId>
+            <version>2.1.2-wso2v4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.synapse</groupId>
+            <artifactId>synapse-commons</artifactId>
+            <version>2.1.2-wso2v4</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>HelloWorld_withStubs</artifactId>
+            <groupId>HelloWorld_withStubs</groupId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/HelloWorld_withStubs.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.ws.ejb.thinclient</groupId>
+            <artifactId>com.ibm.ws.ejb.thinclient</artifactId>
+            <version>8.5.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/com.ibm.ws.ejb.thinclient_8.5.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.ws.orb</groupId>
+            <artifactId>com.ibm.ws.orb</artifactId>
+            <version>8.5.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/com.ibm.ws.orb_8.5.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.foundation</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.registry.core</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>wso2-maven2-repository</id>
+            <url>http://dist.wso2.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+                <version>1.7.2</version>
+                <executions>
+                    <execution>
+                        <id>generate-scr-scrdescriptor</id>
+                        <goals>
+                            <goal>scr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>1.4.0</version>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Private-Package>org.wso2.ext.internal</Private-Package>
+                        <Export-Package>
+                            !org.wso2.ext.internal,
+                            org.wso2.ext.*,
+                            !sqlj.runtime,
+                            !sun.*
+                        </Export-Package>
+                        <Import-Package>
+                            !com.ibm.*,
+                            !javax.*,
+                            !com.ejb.*,
+                            !com.*,
+                            !org.eclipse.*,
+                            !org.apache.geronimo.*,
+                            !org.osgi.*,
+                            !org.w3.*,
+                            org.wso2.carbon.registry.*,
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>*;scope=system</Embed-Dependency>
+                        <Fragment-Host>synapse-core</Fragment-Host>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

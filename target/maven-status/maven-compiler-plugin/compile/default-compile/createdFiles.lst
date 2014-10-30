@@ -1,0 +1,10 @@
+org/wso2/ext/ejb/mediator/CallEJBMediatorSerializer.class
+org/wso2/ext/ejb/mediator/BeanConstants.class
+org/wso2/ext/ejb/mediator/Target.class
+org/wso2/ext/ejb/mediator/BeanUtils.class
+org/wso2/ext/ejb/mediator/BeanMediator.class
+org/wso2/ext/ejb/mediator/CallEJBMediatorFactory.class
+org/wso2/ext/ejb/mediator/CallEJBMediator.class
+org/wso2/ext/ejb/mediator/BeanMediator$Action.class
+org/wso2/ext/ejb/mediator/BeanMediator$1.class
+org/wso2/ext/ejb/mediator/EJBConstants.class
