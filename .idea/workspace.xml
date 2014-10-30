@@ -69,19 +69,7 @@
     <favorites_list name="EJBMediator" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="50" selection-start="89" selection-end="89" vertical-scroll-proportion="0.016411379" vertical-offset="0" max-vertical-offset="914">
-              <folding>
-                <element signature="tag#project#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -801,10 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="50" selection-start="89" selection-end="89" vertical-scroll-proportion="0.016411379" vertical-offset="0" max-vertical-offset="914">
-          <folding>
-            <element signature="tag#project#0" expanded="false" />
-          </folding>
+        <state line="116" column="0" selection-start="4442" selection-end="4442" vertical-scroll-proportion="0.90153176" vertical-offset="916" max-vertical-offset="1830">
+          <folding />
         </state>
       </provider>
     </entry>
