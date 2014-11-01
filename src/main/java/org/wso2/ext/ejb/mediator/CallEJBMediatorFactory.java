@@ -31,7 +31,7 @@ import java.util.Properties;
 public class CallEJBMediatorFactory extends AbstractMediatorFactory {
 
     private static final QName EJB_Q =
-            new QName(XMLConfigConstants.SYNAPSE_NAMESPACE, "nEjb");
+            new QName(XMLConfigConstants.SYNAPSE_NAMESPACE, "callEjb");
 
     public Mediator createSpecificMediator(OMElement elem, Properties properties) {
 

@@ -27,7 +27,7 @@ import java.util.List;
 
 public class CallEJBMediatorSerializer extends AbstractMediatorSerializer {
 
-    private static final String EJB = "nEjb";
+    private static final String EJB = "callEjb";
 
     public OMElement serializeSpecificMediator(Mediator m) {
 
